@@ -42,9 +42,9 @@ description:
 ---
 ```
 
-### Hero-Video aktivieren
+### Hero-Hintergrund
 
-Video als `public/media/hero.mp4` (optional `hero.webm`) ablegen und in `src/site.config.ts` unter `hero.video` eintragen. Ohne Video wird `hero-poster.webp` angezeigt.
+Standard ist ein abstrakter, animierter Farbverlauf. Optional ein Bild (`hero.poster`) oder Video (`hero.video`) in `src/site.config.ts` eintragen und die Datei unter `public/media/` ablegen.
 
 ## Deploy
 

@@ -16,7 +16,6 @@ const jsonLd = {
   jobTitle: 'Software Developer',
   email: `mailto:${site.email}`,
   url: Astro.site?.toString(),
-  image: ogImage.toString(),
   sameAs: Object.values(site.links),
   address: { '@type': 'PostalAddress', addressLocality: 'Linz', addressCountry: 'AT' },
 };
@@ -36,7 +35,7 @@ const jsonLd = {
     <link rel="alternate" hreflang="en" href={new URL('/en/', Astro.site)} />
     <link rel="alternate" hreflang="x-default" href={new URL('/', Astro.site)} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <link rel="preload" as="image" href={site.hero.poster} fetchpriority="high" />
+    {site.hero.poster && <link rel="preload" as="image" href={site.hero.poster} fetchpriority="high" />}
     <meta property="og:type" content="website" />
     <meta property="og:title" content={tr.meta.title} />
     <meta property="og:description" content={tr.meta.description} />

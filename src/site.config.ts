@@ -9,9 +9,9 @@ export const site = {
     github: 'https://github.com/hnnmehic',
   },
   hero: {
-    // Video ist optional: fehlt es, zeigt der Hero nur das Poster-Bild.
+    // Optional: Hintergrundbild oder -video. Leer = abstrakter Farbverlauf.
     video: { mp4: '', webm: '' },
-    poster: '/media/hero-poster.webp',
+    poster: '',
   },
   ogImage: '/media/og.jpg',
 } as const;
