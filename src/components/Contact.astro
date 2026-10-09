@@ -1,0 +1,59 @@
+---
+import { site } from '../site.config';
+import { t, type Lang } from '../i18n';
+import Icon from './Icon.astro';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const tr = t(lang);
+const year = new Date().getFullYear();
+---
+<section id="contact" class="section">
+  <div class="container">
+    <div class="panel card reveal">
+      <span class="label">{tr.contact.label}</span>
+      <h2 class="title">{tr.contact.title}</h2>
+      <p class="sub">{tr.contact.sub}</p>
+      <a class="email gradient-text" href={`mailto:${site.email}`}>{site.email}</a>
+      <div class="actions">
+        <a class="btn btn-primary" href={`mailto:${site.email}`}><Icon name="mail" size={18} /> {tr.contact.mail}</a>
+        <button class="btn btn-ghost" type="button" data-copy={site.email} data-done={tr.contact.copied}>
+          <Icon name="copy" size={18} /> <span>{tr.contact.copy}</span>
+        </button>
+        <a class="icon-btn" href={site.links.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><Icon name="linkedin" /></a>
+        <a class="icon-btn" href={site.links.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub"><Icon name="github" /></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="container footer">
+  <span>© {year} {site.name}</span>
+  <span>{tr.footer.built}</span>
+</footer>
+
+<script>
+  document.querySelectorAll<HTMLButtonElement>('[data-copy]').forEach((btn) => {
+    btn.addEventListener('click', async () => {
+      const label = btn.querySelector('span');
+      if (!label) return;
+      const original = label.textContent;
+      try {
+        await navigator.clipboard.writeText(btn.dataset.copy ?? '');
+        label.textContent = btn.dataset.done ?? '';
+        setTimeout(() => (label.textContent = original), 1800);
+      } catch { /* Clipboard nicht verfügbar: Mail-Link bleibt als Alternative */ }
+    });
+  });
+</script>
+
+<style>
+  .panel { position: relative; overflow: hidden; padding: clamp(32px, 6vw, 80px); text-align: center; display: flex; flex-direction: column; align-items: center; }
+  .panel::before { content: ''; position: absolute; inset: -40% 10% auto; height: 80%; background: radial-gradient(ellipse, rgb(94 242 193 / 0.18), transparent 65%); pointer-events: none; }
+  .panel .label::before { display: none; }
+  .title { margin-top: 18px; font-size: clamp(40px, 7vw, 88px); letter-spacing: -0.03em; }
+  .sub { margin-top: 20px; color: var(--muted); max-width: 48ch; }
+  .email { margin-top: 32px; font-family: var(--font-display); font-weight: 600; font-size: clamp(17px, 3.6vw, 40px); overflow-wrap: anywhere; }
+  .actions { margin-top: 36px; display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+  button.btn { font: inherit; font-weight: 600; font-size: 15px; color: var(--text); cursor: pointer; }
+  .footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding-block: 32px 40px; font-size: 14px; color: var(--muted); font-family: var(--font-mono); }
+</style>

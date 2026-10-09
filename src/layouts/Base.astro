@@ -1,0 +1,63 @@
+---
+import '../styles/global.css';
+import { site } from '../site.config';
+import { t, homePath, type Lang } from '../i18n';
+import Header from '../components/Header.astro';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const tr = t(lang);
+const canonical = new URL(homePath(lang), Astro.site);
+const ogImage = new URL(site.ogImage, Astro.site);
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: site.name,
+  jobTitle: 'Software Developer',
+  email: `mailto:${site.email}`,
+  url: Astro.site?.toString(),
+  image: ogImage.toString(),
+  sameAs: Object.values(site.links),
+  address: { '@type': 'PostalAddress', addressLocality: 'Linz', addressCountry: 'AT' },
+};
+---
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <script is:inline>document.documentElement.classList.add('js')</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{tr.meta.title}</title>
+    <meta name="description" content={tr.meta.description} />
+    <meta name="theme-color" content="#06080c" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang="de" href={new URL('/', Astro.site)} />
+    <link rel="alternate" hreflang="en" href={new URL('/en/', Astro.site)} />
+    <link rel="alternate" hreflang="x-default" href={new URL('/', Astro.site)} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preload" as="image" href={site.hero.poster} fetchpriority="high" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={tr.meta.title} />
+    <meta property="og:description" content={tr.meta.description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:locale" content={lang === 'de' ? 'de_AT' : 'en_US'} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </head>
+  <body>
+    <Header lang={lang} />
+    <main id="top"><slot /></main>
+    <script>
+      const els = document.querySelectorAll<HTMLElement>('.reveal');
+      const io = new IntersectionObserver(
+        (entries) => entries.forEach((e) => {
+          if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); }
+        }),
+        { threshold: 0.15, rootMargin: '0px 0px -40px 0px' },
+      );
+      els.forEach((el) => io.observe(el));
+    </script>
+  </body>
+</html>

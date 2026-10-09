@@ -1,0 +1,83 @@
+{
+  "meta": {
+    "title": "Hanan Mehic – Software Developer",
+    "description": "Software Developer aus Linz. iOS, Java/Quarkus-Backends und KI-Automatisierung. Aktuell: Neator AI und SIXTOSIX."
+  },
+  "nav": {
+    "about": "Über mich",
+    "projects": "Projekte",
+    "stack": "Stack",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "eyebrow": "Software Developer · iOS · AI & Automation",
+    "headlineA": "Ich baue Software,",
+    "headlineB": "die echte Probleme löst.",
+    "sub": "Software-Engineering an der HTBLA Leonding. Ich entwickle native iOS-Apps, robuste Java-Backends und KI-Workflows, die Arbeit wirklich abnehmen.",
+    "ctaProjects": "Projekte ansehen",
+    "ctaContact": "Kontakt aufnehmen",
+    "scroll": "Scrollen"
+  },
+  "about": {
+    "label": "Über mich",
+    "title": "Vom Code bis zum Produkt.",
+    "p1": "Ich bin Hanan, Software-Engineering-Schüler an der HTBLA Leonding in Oberösterreich. Am liebsten arbeite ich dort, wo Mobile, Backend und KI zusammenkommen.",
+    "p2": "Aktuell bin ich Entwickler bei SIXTOSIX, einer Pflege- und Alltags-App, und arbeite bei Neator AI, einer KI-App für Creator, in Entwicklung und Marketing mit. Langfristig möchte ich ein eigenes Software-Unternehmen aufbauen.",
+    "facts": [
+      {
+        "k": "Fokus",
+        "v": "iOS · Backend · AI"
+      },
+      {
+        "k": "Ausbildung",
+        "v": "HTBLA Leonding"
+      },
+      {
+        "k": "Standort",
+        "v": "Linz, Österreich"
+      },
+      {
+        "k": "Status",
+        "v": "Offen für Projekte"
+      }
+    ],
+    "cardTitle": "Profil"
+  },
+  "projects": {
+    "label": "Projekte",
+    "title": "Woran ich gerade arbeite.",
+    "statusLabel": {
+      "building": "In Entwicklung",
+      "live": "Live",
+      "beta": "Beta"
+    },
+    "visit": "Ansehen",
+    "roleLabel": "Meine Rolle"
+  },
+  "stack": {
+    "label": "Stack",
+    "title": "Werkzeuge, mit denen ich baue.",
+    "groups": {
+      "mobile": "Mobile",
+      "backend": "Backend",
+      "design": "Design",
+      "devops": "Cloud & DevOps",
+      "ai": "AI & Automation"
+    }
+  },
+  "contact": {
+    "label": "Kontakt",
+    "title": "Lass uns etwas bauen.",
+    "sub": "Projekt, Job oder einfach eine Idee? Schreib mir. Ich antworte normalerweise innerhalb von 24 Stunden.",
+    "mail": "Mail schreiben",
+    "copy": "Adresse kopieren",
+    "copied": "Kopiert!"
+  },
+  "footer": {
+    "built": "Gebaut mit Astro, gehostet auf GitHub Pages."
+  },
+  "langSwitch": {
+    "label": "English",
+    "short": "EN"
+  }
+}

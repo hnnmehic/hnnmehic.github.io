@@ -1,0 +1,83 @@
+{
+  "meta": {
+    "title": "Hanan Mehic – Software Developer",
+    "description": "Software developer from Linz, Austria. iOS, Java/Quarkus backends and AI automation. Currently building Neator AI and SIXTOSIX."
+  },
+  "nav": {
+    "about": "About",
+    "projects": "Projects",
+    "stack": "Stack",
+    "contact": "Contact"
+  },
+  "hero": {
+    "eyebrow": "Software Developer · iOS · AI & Automation",
+    "headlineA": "Building software",
+    "headlineB": "that solves real problems.",
+    "sub": "Software engineering student at HTBLA Leonding. I build native iOS apps, solid Java backends and AI workflows that actually take work off people's hands.",
+    "ctaProjects": "See projects",
+    "ctaContact": "Get in touch",
+    "scroll": "Scroll"
+  },
+  "about": {
+    "label": "About",
+    "title": "From code to product.",
+    "p1": "I'm Hanan, a software engineering student at HTBLA Leonding in Upper Austria. I enjoy working where mobile, backend and AI meet.",
+    "p2": "Right now I'm the developer at SIXTOSIX, a care and daily-life app, and I work on development and marketing at Neator AI, an AI app for creators. Long term, I want to build my own software company.",
+    "facts": [
+      {
+        "k": "Focus",
+        "v": "iOS · Backend · AI"
+      },
+      {
+        "k": "Education",
+        "v": "HTBLA Leonding"
+      },
+      {
+        "k": "Based in",
+        "v": "Linz, Austria"
+      },
+      {
+        "k": "Status",
+        "v": "Open to projects"
+      }
+    ],
+    "cardTitle": "Profile"
+  },
+  "projects": {
+    "label": "Projects",
+    "title": "What I'm building right now.",
+    "statusLabel": {
+      "building": "In development",
+      "live": "Live",
+      "beta": "Beta"
+    },
+    "visit": "Visit",
+    "roleLabel": "My role"
+  },
+  "stack": {
+    "label": "Stack",
+    "title": "Tools I build with.",
+    "groups": {
+      "mobile": "Mobile",
+      "backend": "Backend",
+      "design": "Design",
+      "devops": "Cloud & DevOps",
+      "ai": "AI & Automation"
+    }
+  },
+  "contact": {
+    "label": "Contact",
+    "title": "Let's build something.",
+    "sub": "A project, a job or just an idea? Drop me a line. I usually reply within 24 hours.",
+    "mail": "Send an email",
+    "copy": "Copy address",
+    "copied": "Copied!"
+  },
+  "footer": {
+    "built": "Built with Astro, hosted on GitHub Pages."
+  },
+  "langSwitch": {
+    "label": "Deutsch",
+    "short": "DE"
+  }
+}
