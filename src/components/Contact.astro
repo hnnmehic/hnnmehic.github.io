@@ -2,6 +2,7 @@
 import { site } from '../site.config';
 import { t, type Lang } from '../i18n';
 import Icon from './Icon.astro';
+import Logo from './Logo.astro';
 interface Props { lang: Lang }
 const { lang } = Astro.props;
 const tr = t(lang);
@@ -27,7 +28,7 @@ const year = new Date().getFullYear();
 </section>
 
 <footer class="container footer">
-  <span>© {year} {site.name}</span>
+  <span class="copy"><Logo size={22} /> © {year} {site.name}</span>
   <span>{tr.footer.built}</span>
 </footer>
 
@@ -55,5 +56,6 @@ const year = new Date().getFullYear();
   .email { margin-top: 32px; font-family: var(--font-display); font-weight: 600; font-size: clamp(17px, 3.6vw, 40px); overflow-wrap: anywhere; }
   .actions { margin-top: 36px; display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
   button.btn { font: inherit; font-weight: 600; font-size: 15px; color: var(--text); cursor: pointer; }
+  .copy { display: inline-flex; align-items: center; gap: 12px; }
   .footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding-block: 32px 40px; font-size: 14px; color: var(--muted); font-family: var(--font-mono); }
 </style>

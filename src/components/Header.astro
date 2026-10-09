@@ -1,16 +1,16 @@
 ---
 import { site } from '../site.config';
 import { t, homePath, type Lang } from '../i18n';
+import Logo from './Logo.astro';
 interface Props { lang: Lang }
 const { lang } = Astro.props;
 const tr = t(lang);
 const other: Lang = lang === 'de' ? 'en' : 'de';
-const initials = site.name.split(' ').map((p) => p[0]).join('');
 ---
 <header class="header" data-header>
   <div class="container inner">
     <a href={homePath(lang)} class="brand" aria-label={site.name}>
-      <span class="mark">{initials}</span><span class="brand-name">{site.name}</span>
+      <Logo class="mark" size={34} /><span class="brand-name">{site.name}</span>
     </a>
     <nav aria-label="Main">
       <a href="#about">{tr.nav.about}</a>
@@ -35,8 +35,9 @@ const initials = site.name.split(' ').map((p) => p[0]).join('');
   .header { position: fixed; inset: 0 0 auto; z-index: 50; transition: background 0.4s, border-color 0.4s, backdrop-filter 0.4s; border-bottom: 1px solid transparent; }
   .header.scrolled { background: rgb(6 8 12 / 0.72); backdrop-filter: blur(14px) saturate(1.4); border-color: var(--line); }
   .inner { display: flex; align-items: center; justify-content: space-between; height: 72px; gap: 24px; }
-  .brand { display: flex; align-items: center; gap: 12px; font-family: var(--font-display); font-weight: 600; }
-  .mark { width: 36px; height: 36px; display: grid; place-items: center; border-radius: 10px; font-family: var(--font-mono); font-size: 13px; color: #04110c; background: var(--gradient); }
+  .brand { display: flex; align-items: center; gap: 14px; font-family: var(--font-display); font-weight: 600; }
+  .brand :global(.mark) { color: var(--text); transition: color 0.3s; }
+  .brand:hover :global(.mark) { color: var(--accent); }
   nav { display: flex; gap: 32px; font-size: 15px; color: var(--muted); }
   nav a { transition: color 0.2s; }
   nav a:hover { color: var(--text); }
