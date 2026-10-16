@@ -5,12 +5,13 @@ import Logo from './Logo.astro';
 interface Props { lang: Lang }
 const { lang } = Astro.props;
 const tr = t(lang);
+const [first, ...rest] = site.name.split(' ');
 const other: Lang = lang === 'de' ? 'en' : 'de';
 ---
 <header class="header" data-header>
   <div class="container inner">
     <a href={homePath(lang)} class="brand" aria-label={site.name}>
-      <Logo class="mark" size={34} /><span class="brand-name">{site.name}</span>
+      <Logo class="mark" size={30} /><span class="brand-name">{first} <span class="thin">{rest.join(' ')}</span></span>
     </a>
     <nav aria-label="Main">
       <a href="#about">{tr.nav.about}</a>
@@ -33,15 +34,16 @@ const other: Lang = lang === 'de' ? 'en' : 'de';
 
 <style>
   .header { position: fixed; inset: 0 0 auto; z-index: 50; transition: background 0.4s, border-color 0.4s, backdrop-filter 0.4s; border-bottom: 1px solid transparent; }
-  .header.scrolled { background: rgb(6 8 12 / 0.72); backdrop-filter: blur(14px) saturate(1.4); border-color: var(--line); }
+  .header.scrolled { background: rgb(14 15 19 / 0.75); backdrop-filter: blur(14px) saturate(1.4); border-color: var(--line); }
   .inner { display: flex; align-items: center; justify-content: space-between; height: 72px; gap: 24px; }
-  .brand { display: flex; align-items: center; gap: 14px; font-family: var(--font-display); font-weight: 600; }
+  .brand { display: flex; align-items: center; gap: 14px; font-family: var(--font-display); font-weight: 700; font-size: 18px; letter-spacing: -0.02em; }
   .brand :global(.mark) { color: var(--text); transition: color 0.3s; }
-  .brand:hover :global(.mark) { color: var(--accent); }
+  .brand :global(.node) { transition: filter 0.3s; }
+  .brand:hover :global(.node) { filter: drop-shadow(0 0 6px var(--accent)); }
   nav { display: flex; gap: 32px; font-size: 15px; color: var(--muted); }
   nav a { transition: color 0.2s; }
   nav a:hover { color: var(--text); }
-  .lang { font-family: var(--font-mono); font-size: 13px; color: var(--muted); padding: 8px 14px; border: 1px solid var(--line-strong); border-radius: 999px; transition: border-color 0.2s; }
+  .lang { font-size: 12px; font-weight: 500; letter-spacing: 0.14em; color: var(--muted); padding: 8px 14px; border: 1px solid var(--line-strong); border-radius: 999px; transition: border-color 0.2s; }
   .lang:hover { border-color: var(--accent); }
   .lang .active { color: var(--accent); }
   .sep { margin-inline: 6px; opacity: 0.4; }

@@ -1,19 +1,21 @@
-/* Design-Tokens: für ein neues Branding nur diese Datei anpassen. */
+/* Design-Tokens: für ein neues Branding nur diese Datei anpassen.
+   Abgeleitet vom HM-Digital-Logo: Graphit, Weiß, ein grüner Akzent. */
 :root {
-  --bg: #06080c;
-  --bg-2: #0a0e14;
-  --surface: #0f141c;
-  --surface-2: #141b25;
-  --line: rgb(255 255 255 / 0.08);
-  --line-strong: rgb(255 255 255 / 0.16);
-  --text: #e9eef4;
-  --muted: #8c99a9;
-  --accent: #5ef2c1;
-  --accent-2: #5b8cff;
-  --accent-glow: rgb(94 242 193 / 0.35);
-  --gradient: linear-gradient(100deg, var(--accent) 0%, var(--accent-2) 100%);
+  --bg: #0e0f13;
+  --bg-2: #121318;
+  --surface: #16181e;
+  --surface-2: #1c1e25;
+  --line: rgb(255 255 255 / 0.07);
+  --line-strong: rgb(255 255 255 / 0.14);
+  --text: #f5f6f8;
+  --muted: #8a8e99;
+  --accent: #2ee58c;
+  --accent-2: #c9ccd3;
+  --accent-glow: rgb(46 229 140 / 0.32);
+  --on-accent: #06140d;
+  --gradient: linear-gradient(100deg, #ffffff 0%, var(--accent) 100%);
 
-  --font-display: 'Space Grotesk Variable', system-ui, sans-serif;
+  --font-display: 'Inter Variable', system-ui, sans-serif;
   --font-body: 'Inter Variable', system-ui, sans-serif;
   --font-mono: 'JetBrains Mono Variable', ui-monospace, monospace;
 

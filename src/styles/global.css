@@ -1,4 +1,3 @@
-@import '@fontsource-variable/space-grotesk';
 @import '@fontsource-variable/inter';
 @import '@fontsource-variable/jetbrains-mono';
 @import './tokens.css';
@@ -17,25 +16,27 @@ body {
 }
 img, video { display: block; max-width: 100%; }
 a { color: inherit; text-decoration: none; }
-h1, h2, h3 { font-family: var(--font-display); line-height: 1.05; letter-spacing: -0.02em; margin: 0; font-weight: 600; }
+h1, h2, h3 { font-family: var(--font-display); line-height: 1.05; letter-spacing: -0.035em; margin: 0; font-weight: 700; }
+/* Wortmarke wie im Logo: fetter Teil + leichter Teil */
+.thin { font-weight: 300; }
 p { margin: 0; }
-::selection { background: var(--accent); color: var(--bg); }
+::selection { background: var(--accent); color: var(--on-accent); }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
 
 .container { width: 100%; max-width: var(--container); margin-inline: auto; padding-inline: var(--gutter); }
 .section { padding-block: var(--section); position: relative; }
 
 .label {
-  font-family: var(--font-mono);
   font-size: 13px;
-  letter-spacing: 0.08em;
+  font-weight: 500;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--muted);
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
 }
-.label::before { content: ''; width: 28px; height: 1px; background: currentColor; opacity: 0.6; }
+.label::before { content: ''; width: 9px; height: 9px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 12px var(--accent-glow); }
 .section-title { font-size: clamp(36px, 5.5vw, 64px); margin-top: 18px; max-width: 16ch; }
 .gradient-text { background: var(--gradient); -webkit-background-clip: text; background-clip: text; color: transparent; }
 
@@ -47,7 +48,7 @@ p { margin: 0; }
   transition: transform 0.3s var(--ease), background 0.3s var(--ease), border-color 0.3s, box-shadow 0.3s;
 }
 .btn:hover { transform: translateY(-2px); border-color: var(--accent); }
-.btn-primary { background: var(--accent); color: #04110c; border-color: transparent; box-shadow: 0 0 0 0 var(--accent-glow); }
+.btn-primary { background: var(--accent); color: var(--on-accent); border-color: transparent; box-shadow: 0 0 0 0 var(--accent-glow); }
 .btn-primary:hover { box-shadow: 0 10px 40px -8px var(--accent-glow); border-color: transparent; }
 .btn-ghost { background: rgb(255 255 255 / 0.04); backdrop-filter: blur(10px); }
 .icon-btn {

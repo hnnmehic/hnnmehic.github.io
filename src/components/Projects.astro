@@ -43,14 +43,14 @@ const projects = (await getCollection('projects')).sort((a, b) => a.data.order -
   .project:hover::after { opacity: 0.6; }
   .top { display: flex; align-items: center; justify-content: space-between; }
   .logo { width: 64px; height: 64px; border-radius: 16px; object-fit: cover; }
-  .logo.mono { display: grid; place-items: center; font-family: var(--font-mono); font-weight: 600; color: #04110c; background: var(--gradient); }
-  .status { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: 12px; color: var(--muted); padding: 6px 12px; border: 1px solid var(--line); border-radius: 999px; }
+  .logo.mono { display: grid; place-items: center; font-weight: 700; letter-spacing: -0.02em; color: var(--on-accent); background: var(--accent); }
+  .status { display: inline-flex; align-items: center; gap: 8px; font-size: 11px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); padding: 6px 12px; border: 1px solid var(--line); border-radius: 999px; }
   .status .dot { width: 7px; height: 7px; border-radius: 50%; background: #f5c35e; box-shadow: 0 0 10px #f5c35e; }
   .status.live .dot { background: var(--accent); box-shadow: 0 0 10px var(--accent); }
   .status.beta .dot { background: var(--accent-2); box-shadow: 0 0 10px var(--accent-2); }
   h3 { margin-top: 28px; font-size: clamp(28px, 3vw, 36px); }
   .tagline { margin-top: 6px; color: var(--accent); font-weight: 500; }
-  .role { margin-top: 16px; font-family: var(--font-mono); font-size: 13px; color: var(--text); }
+  .role { margin-top: 16px; font-size: 14px; color: var(--text); }
   .role span { color: var(--muted); }
   .role span::after { content: ':'; }
   .desc { margin-top: 16px; color: var(--muted); flex: 1; }

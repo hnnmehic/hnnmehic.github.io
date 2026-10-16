@@ -1,9 +1,15 @@
 ---
-// HM-Monogramm als Vektor; Farbe folgt currentColor.
+// HM-Digital-Signet (Knoten-Dreieck/Play) als Vektor; Linien folgen currentColor, der Punkt dem Akzent.
 interface Props { size?: number; class?: string }
 const { size = 32, class: className } = Astro.props;
 ---
-<svg class={className} width={size} height={Math.round(size * 465 / 564)} viewBox="343 393 564 465" fill="currentColor" aria-hidden="true">
-  <polygon points="343,394 447,394 447,621 631,749 631,858 535,858 535,719 447,719 447,858 343,858" />
-  <polygon points="476,526 615,621 907,393 907,858 804,858 804,590 634,718 476,608" />
+<svg class={className} width={Math.round(size * 432 / 486)} height={size} viewBox="520 390 432 486" fill="currentColor" aria-hidden="true">
+  <circle cx="568" cy="438" r="48" />
+  <circle cx="568" cy="827" r="48" />
+  <g stroke="currentColor" stroke-width="44" stroke-linecap="round">
+    <line x1="568" y1="516" x2="568" y2="749" />
+    <line x1="635.5" y1="477" x2="835.5" y2="593" />
+    <line x1="635.5" y1="788" x2="835.5" y2="672" />
+  </g>
+  <circle class="node" cx="903" cy="632.5" r="48" fill="var(--accent, #2ee58c)" />
 </svg>

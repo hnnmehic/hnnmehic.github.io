@@ -14,7 +14,7 @@ const year = new Date().getFullYear();
       <span class="label">{tr.contact.label}</span>
       <h2 class="title">{tr.contact.title}</h2>
       <p class="sub">{tr.contact.sub}</p>
-      <a class="email gradient-text" href={`mailto:${site.email}`}>{site.email}</a>
+      <a class="email" href={`mailto:${site.email}`}>{site.email}</a>
       <div class="actions">
         <a class="btn btn-primary" href={`mailto:${site.email}`}><Icon name="mail" size={18} /> {tr.contact.mail}</a>
         <button class="btn btn-ghost" type="button" data-copy={site.email} data-done={tr.contact.copied}>
@@ -49,13 +49,15 @@ const year = new Date().getFullYear();
 
 <style>
   .panel { position: relative; overflow: hidden; padding: clamp(32px, 6vw, 80px); text-align: center; display: flex; flex-direction: column; align-items: center; }
-  .panel::before { content: ''; position: absolute; inset: -40% 10% auto; height: 80%; background: radial-gradient(ellipse, rgb(94 242 193 / 0.18), transparent 65%); pointer-events: none; }
+  .panel::before { content: ''; position: absolute; inset: -40% 10% auto; height: 80%; background: radial-gradient(ellipse, rgb(46 229 140 / 0.14), transparent 65%); pointer-events: none; }
   .panel .label::before { display: none; }
   .title { margin-top: 18px; font-size: clamp(40px, 7vw, 88px); letter-spacing: -0.03em; }
   .sub { margin-top: 20px; color: var(--muted); max-width: 48ch; }
-  .email { margin-top: 32px; font-family: var(--font-display); font-weight: 600; font-size: clamp(17px, 3.6vw, 40px); overflow-wrap: anywhere; }
+  .email { margin-top: 32px; font-family: var(--font-display); font-weight: 300; letter-spacing: -0.02em; color: var(--text); transition: color 0.3s; }
+  .email:hover { color: var(--accent); }
+  .email { font-size: clamp(17px, 3.6vw, 40px); overflow-wrap: anywhere; }
   .actions { margin-top: 36px; display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
   button.btn { font: inherit; font-weight: 600; font-size: 15px; color: var(--text); cursor: pointer; }
   .copy { display: inline-flex; align-items: center; gap: 12px; }
-  .footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding-block: 32px 40px; font-size: 14px; color: var(--muted); font-family: var(--font-mono); }
+  .footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding-block: 32px 40px; font-size: 14px; color: var(--muted); }
 </style>
